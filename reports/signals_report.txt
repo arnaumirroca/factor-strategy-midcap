@@ -1,0 +1,70 @@
+Signal report - 15 Nov 2026
+
+Month-ends scored: 316 (2000-07 to 2026-10)
+Stocks passing the universe filters per month: min 690, median 891, max 966 (of about 1000 stocks ranked 501-1,500)
+
+Coverage (share of universe with each score):
+  low_vol    100.0%
+  quality     99.7%
+  res_mom     97.8%
+  value       99.7%
+  composite   99.7%
+
+Top 10 by composite score at sample dates (check these make sense):
+  2000-12-31
+     #  Ticker Name                        Sector                    Comp  LowV  Qual  RMom   Val
+     1  SCZ.B  SECURITY CAPITAL GROUP INC  Real Estate              +0.71 +0.94 +0.94   -   +1.00
+     2  HE     HAWAIIAN ELECTRIC INDUSTRIE Utilities                +0.69 +0.90 +0.94   -   +0.94
+     3  VRE    VERIS RESIDENTIAL INC       Real Estate              +0.64 +0.93 +0.74   -   +0.94
+     4  SVC    SERVICE PROPERTIES TRUST    Real Estate              +0.61 +0.90 +0.81   -   +0.68
+     5  SUN1   SUNOCO INC                  Energy                   +0.60 +0.69 +0.88   -   +0.84
+     6  MUR    MURPHY OIL CORP             Energy                   +0.59 +0.63 +0.96   -   +0.76
+     7  UDS    ULTRAMAR DIAMOND SHAMROCK C Energy                   +0.59 +0.64 +0.84   -   +0.96
+     8  ASH    ASHLAND INC                 Basic Materials          +0.58 +0.84 +0.94   -   +0.29
+     9  LNT    ALLIANT ENERGY CORP         Utilities                +0.56 +0.78 +0.88   -   +0.39
+    10  DLX    DELUXE CORP                 Communication Services   +0.54 +0.77 +0.61   -   +0.87
+  2008-12-31
+     #  Ticker Name                        Sector                    Comp  LowV  Qual  RMom   Val
+     1  BHC    BAUSCH HEALTH COMPANIES INC Healthcare               +0.79 +0.74 +0.89 +0.63 +0.98
+     2  NJR    NEW JERSEY RESOURCES CORP   Utilities                +0.79 +0.93 +1.00 +0.73 +0.18
+     3  ELNK   EARTHLINK HOLDINGS CORP     Communication Services   +0.79 +0.69 +0.67 +1.00 +0.87
+     4  PTP    PLATINUM UNDERWRITERS HOLDI Financial Services       +0.78 +0.84 +0.86 +0.53 +0.89
+     5  WGL    WGL HOLDINGS INC            Utilities                +0.78 +0.88 +0.95 +0.86 +0.07
+     6  UHS    UNIVERSAL HEALTH SERVICES I Healthcare               +0.77 +0.89 +0.59 +0.91 +0.68
+     7  ATO    ATMOS ENERGY CORP           Utilities                +0.76 +0.98 +0.68 +0.50 +0.91
+     8  ZBRA   ZEBRA TECHNOLOGIES CORP     Technology               +0.70 +0.72 +0.76 +0.77 +0.45
+     9  BJ1    BJS WHOLESALE CLUB INC      Consumer Defensive       +0.70 +0.70 +0.89 +0.83 +0.09
+    10  TKLC   TEKELEC                     Technology               +0.68 +0.62 +0.79 +1.00 +0.06
+  2015-12-31
+     #  Ticker Name                        Sector                    Comp  LowV  Qual  RMom   Val
+     1  PSB    PS BUSINESS PARKS INC       Real Estate              +0.88 +0.83 +0.94 +0.80 +0.97
+     2  SSD    SIMPSON MANUFACTURING CO IN Basic Materials          +0.72 +0.80 +0.72 +0.86 +0.34
+     3  LAMR   LAMAR ADVERTISING CO        Real Estate              +0.71 +0.89 +0.50 +0.89 +0.46
+     4  ACH    ACCENDRA HEALTH INC         Healthcare               +0.70 +0.90 +0.34 +0.88 +0.74
+     5  ORI    OLD REPUBLIC INTERNATIONAL  Financial Services       +0.68 +0.82 +0.24 +1.00 +0.73
+     6  AFG    AMERICAN FINANCIAL GROUP IN Financial Services       +0.68 +0.99 +0.48 +0.66 +0.47
+     7  SIRO   SIRONA DENTAL SYSTEMS INC   Healthcare               +0.68 +0.90 +0.47 +0.90 +0.26
+     8  HCSG   HEALTHCARE SERVICES GROUP I Healthcare               +0.66 +0.80 +0.93 +0.67 -0.15
+     9  SNPS   SYNOPSYS INC                Technology               +0.66 +0.64 +0.59 +0.85 +0.51
+    10  JKHY   JACK HENRY & ASSOCIATES INC Technology               +0.64 +0.95 +0.87 +0.51 -0.25
+
+How well each score ranked next month's returns - IN-SAMPLE ONLY (holding months 2000-08 to 2015-12, 185 months)
+  IC = rank correlation between the score and next month's return, averaged over months.
+  Positive = the score pointed the right way. Typical good single signals: +0.02 to +0.05.
+
+  Score       Mean IC  t-stat  IC > 0   Top-bottom 20% (a year)
+  low_vol      +0.028    1.83     52%                    +7.0%
+  quality      +0.012    2.55     58%                    +3.4%
+  res_mom      +0.005    0.81     53%                    +1.1%
+  value        +0.028    4.46     57%                   +10.2%
+  composite    +0.031    2.74     55%                    +9.7%
+
+Average correlation between the scores (in-sample months):
+               low_vol   quality   res_mom     value
+  low_vol         1.00      0.02      0.01      0.16
+  quality         0.02      1.00     -0.01      0.00
+  res_mom         0.01     -0.01      1.00     -0.06
+  value           0.16      0.00     -0.06      1.00
+
+Hold-out: nothing after Dec 2015 is shown. It is reserved for Gate 2.
+Top 25 at the sample dates: reports\signals_top25_samples.csv
