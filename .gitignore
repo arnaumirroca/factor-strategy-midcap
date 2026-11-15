@@ -1,0 +1,21 @@
+# Python environment and caches
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Data and personal records - never commit (licence terms and privacy)
+data/
+journal/
+
+# Credentials and local settings
+.env
+*.key
+credentials*
+secrets*
+
+# OS and editor clutter
+Thumbs.db
+desktop.ini
+.DS_Store
