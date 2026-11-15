@@ -1,0 +1,39 @@
+Universe report - 15 Nov 2026
+US common stocks ranked 501-1,500 by market value, price above $5.
+
+Month-ends: 1998-01 to 2026-10 (346)
+Members per month-end: min 1000, median 1000, max 1000
+Stocks with a market value per month-end (all sizes): median 3,502
+Names entering the universe each month: 5.5% on average (66% a year)
+Different stocks ever in the universe: 5,747
+
+Size range at sample dates (USD millions):
+  Date            Rank 501  Rank 1,000  Rank 1,500    Largest (#1)
+  2000-12-31         4,027       1,490         742         475,028
+  2008-12-31         3,091       1,177         547         406,067
+  2015-12-31         8,369       3,072       1,577         586,869
+
+Members that are also in the S&P 500: 9.4% on average (should be low: the S&P 500 is roughly the 500 largest)
+Share of the 500 largest that are S&P 500 members: 79% on average (information only: index members below $5 are filtered out, and the index has its own rules)
+
+Our market value vs Sharadar's in the latest filing (ranks 1-1,500): 99.6% within 0.5-2x (prices move between filing and month-end; needs 90%+)
+
+Largest company each December (USD billions; check against what you know):
+  1998 MSFT 346  1999 MSFT 602  2000 GE 475  2001 GE 398  2002 MSFT 276  2003 GE 311  2004 GE 386  2005 GE 370  2006 XOM 447  2007 XOM 512  2008 XOM 406  2009 XOM 324  2010 XOM 369  2011 XOM 406  2012 AAPL 501  2013 AAPL 505  2014 AAPL 647  2015 AAPL 587  2016 AAPL 618  2017 AAPL 869  2018 MSFT 780  2019 AAPL 1,305  2020 AAPL 2,256  2021 AAPL 2,913  2022 AAPL 2,067  2023 AAPL 2,994  2024 AAPL 3,785  2025 NVDA 4,532
+
+Sector mix (share of names):
+  Sector                        2000    2008    2015
+  Basic Materials                 4%      4%      4%
+  Communication Services          6%      4%      5%
+  Consumer Cyclical              11%     10%     12%
+  Consumer Defensive              5%      4%      4%
+  Energy                          6%      9%      8%
+  Financial Services             15%     17%     16%
+  Healthcare                     12%     12%     11%
+  Industrials                    12%     16%     13%
+  Real Estate                     4%      5%      9%
+  Technology                     21%     14%     15%
+  Unknown                         0%      0%      0%
+  Utilities                       4%      5%      4%
+
+Result: PASS

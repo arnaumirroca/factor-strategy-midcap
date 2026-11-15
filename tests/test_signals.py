@@ -163,6 +163,7 @@ def synthetic_market(n=60, months=60, seed=3):
             for dim in ("ARQ", "ART"):
                 rows.append({"ticker": t, "dimension": dim, "reportperiod": rp, "filed": rp + pd.Timedelta(days=40),
                              "equity": 100.0 + i, "assets": 300.0, "debt": float(i), "sharesbas": 1e6,
+                             "marketcap": float("nan"), "price": float("nan"),
                              "revenue": 200.0 + 3 * i, "cor": 100.0, "sgna": 40.0, "intexp": 5.0,
                              "netinccmn": 20.0 + i % 7, "fcf": 15.0 - i % 5})
     fund = pd.DataFrame(rows)

@@ -31,7 +31,7 @@ import pandas as pd
 
 from src.data import sharadar as sh
 from src.data.size_universe import OUT_PATH as UNIVERSE_PATH
-from src.data.gate1_momentum import split_adjusted_shares
+from src.data.market_value import filing_shares, market_value
 from src.signals import characteristics as ch
 from src.signals.common import WEIGHTS, combine, mean_of_available, rank_score, spearman_by_date
 from src.signals.residual_momentum import FACTORS, residual_momentum_at
@@ -108,21 +108,20 @@ def build_panel(membership, monthly, tickers, fund, daily, ff3) -> pd.DataFrame:
     panel["sector"] = panel["sector"].fillna("Unknown")
 
     print("  matching the latest filing before each month-end...", flush=True)
-    q = sh.fundamentals_asof(fund[["ticker", "dimension", "filed", "equity", "assets", "debt", "sharesbas"]], panel, "ARQ")
+    fq = fund[["ticker", "dimension", "filed", "equity", "assets", "debt", "sharesbas", "marketcap", "price"]].rename(
+        columns={"marketcap": "sf1_cap", "price": "sf1_price"})
+    q = sh.fundamentals_asof(fq, panel, "ARQ")
     t = sh.fundamentals_asof(fund[["ticker", "dimension", "filed", "revenue", "cor", "sgna", "intexp", "netinccmn", "fcf"]],
                              panel, "ART")
-    q_cols, t_cols = ["equity", "assets", "debt", "sharesbas"], ["revenue", "cor", "sgna", "intexp", "netinccmn", "fcf"]
+    q_cols, t_cols = ["equity", "assets", "debt", "sharesbas", "sf1_cap", "sf1_price"], ["revenue", "cor", "sgna", "intexp", "netinccmn", "fcf"]
     for df, cols in ((q, q_cols), (t, t_cols)):
         stale = (df["date"] - df["filed"]).dt.days > STALE_FILING_DAYS
         df.loc[stale, cols] = np.nan
     panel = panel.merge(q[["date", "ticker", "filed"] + q_cols], on=["date", "ticker"], how="left")
     panel = panel.merge(t[["date", "ticker"] + t_cols], on=["date", "ticker"], how="left")
 
-    panel["filed_month"] = (panel["filed"] + pd.offsets.MonthEnd(0)).astype("datetime64[ns]")
-    k_long = _long(K, "k_filed").rename(columns={"date": "filed_month"})
-    panel = panel.merge(k_long, on=["filed_month", "ticker"], how="left")
-    panel["shares"] = split_adjusted_shares(panel["sharesbas"], panel["k_filed"].fillna(panel["k"]), panel["k"])
-    panel["market_cap"] = panel["price"] * panel["shares"]
+    panel["shares"] = filing_shares(panel["sharesbas"], panel["sf1_cap"], panel["sf1_price"])
+    panel["market_cap"] = market_value(panel["price"], panel["k"], panel["shares"])
 
     panel["low_vol_raw"] = ch.low_vol_raw(panel["vol"])
     panel["op"] = ch.operating_profitability(panel["revenue"], panel["cor"], panel["sgna"], panel["intexp"], panel["equity"])
