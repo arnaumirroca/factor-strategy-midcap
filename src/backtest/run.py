@@ -48,7 +48,7 @@ TRIAL_LOG = REPORTS / "trial_log.csv"
 # DMF-US-02 (decided 14/11/2026, before running): the S&P 500 project's trial-2 rules applied to
 # US stocks ranked 501-1,500 by market value, with trading costs of 20 bps instead of 7.
 # The trial log starts with the S&P 500 project's two trials, so the deflated Sharpe counts them.
-CURRENT = Config(label="Trial 3: mid/small caps (ranks 501-1,500)")
+CURRENT = Config(label="Trial 4: mid/small caps (ranks 501-1,500)")
 
 SUB_PERIODS = [("Aug 2000-2003", "2000", "2003"), ("2004-2009", "2004", "2009"), ("2010-2015", "2010", "2015")]
 
